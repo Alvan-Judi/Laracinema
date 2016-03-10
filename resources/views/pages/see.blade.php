@@ -15,7 +15,7 @@
 
             @if(!empty($result))
                 <div class="see">
-                    <div></div>
+                    <div>TEST</div>
                     <h1> {{$result->title}} </h1>
                     <div class="image">
                         <img src="{{$result->image}}" />
