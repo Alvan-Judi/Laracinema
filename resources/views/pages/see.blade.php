@@ -13,13 +13,10 @@
 
 
 
-
-
-
+            {{--C'est cool GIT  !!! COUCOU --}}
             @if(!empty($result))
                 <div class="see">
                     <div>BLAL BLA </div>
-
                     <h1> {{$result->title}} </h1>
                     <div class="image">
                         <img src="{{$result->image}}" />
