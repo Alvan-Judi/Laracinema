@@ -14,7 +14,7 @@
 
 
 
-            
+
             {{--C'est cool GIT --}}
             @if(!empty($result))
                 <div class="see">
