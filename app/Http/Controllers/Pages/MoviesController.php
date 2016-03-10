@@ -1,6 +1,8 @@
 <?php
 
-
+/**
+ * @author: Alexis contributed by Julien
+ */
 namespace App\Http\Controllers\Pages;
 
 use App\Categories;
@@ -66,7 +68,8 @@ class MoviesController extends PageController {
     }
 
     /**
-     * @param Request $request
+     * Store a new movies from form at BDD
+     * @param MoviesRequest $request
      * @return mixed
      */
     public function store(MoviesRequest $request){
