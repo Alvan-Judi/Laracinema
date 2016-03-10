@@ -1,0 +1,253 @@
+/*IMPORT POLICES*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+html, body {
+    font-size: 62.5%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: table;
+    font-weight: 100;
+    font-family: 'Lato';
+    font-size: 1.6rem; ;
+}
+
+h1 {
+    margin-top: 5rem;
+    font-size: 5rem;
+}
+.container {
+    text-align: center;
+    position: relative;
+}
+
+.content {
+    text-align: center;
+    display: inline-block;
+}
+
+.title {
+    font-size: 96px;
+}
+
+#main-nav {
+    background-color: #262626;
+    margin-bottom: 3rem;
+}
+
+#main-nav  ul {
+
+}
+
+#main-nav  ul li{
+    display: inline-block;
+    padding: 0 25px;
+    padding: 1rem;
+}
+
+#main-nav li a {
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+
+
+p {
+    font-family: 'Open Sans';
+}
+
+.fiche {
+    background-color: #262626;
+    display: inline-block;
+    margin: 50px 10px 0px 10px;
+    width: 60%;
+    padding: 10px;
+    vertical-align: top;
+    color: #ECF0F1;
+    box-shadow: #262626 1px 1px 5px;
+}
+
+.fiche .image {
+    float: left;
+    width: 20%;
+}
+
+.fiche a {
+    font-family: 'Open Sans';
+    text-decoration: none;
+}
+
+.fiche img {
+    border: 3px solid black;
+    max-width: 100%;
+}
+
+.fiche_text{
+    margin-left: 2%;
+    float: left;
+    width: 75%;
+}
+
+.fiche_text p {
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.fiche h1 {
+    margin: 0;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+.seemore {
+    color: brown;
+    font-size: 18px;
+    text-align: left;
+}
+.paginate{
+    margin-top: 2rem;
+}
+
+.paginate a{
+    letter-spacing: 3px;
+    color: #262626;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.paginate .active {
+    letter-spacing: 3px;
+    font-size: 22px;
+    color: darkgrey;
+}
+
+.flash-message{
+    position: fixed;
+    background-color: #262626;
+    color: white;
+    top: 300px;
+    left: 0;
+    border-radius: 0 6px 6px 0;
+    border-left: none;
+    font-size: 1.8rem;
+    max-width: 15%;
+}
+
+.flash-message p {
+    padding: 1rem;
+}
+
+table {
+    margin: 0 auto;
+}
+table, tr, td {
+    font-family: 'Open Sans';
+}
+
+td {
+    padding: 10px;
+    text-align: right;
+    border: 1px solid black;
+}
+
+td a {
+    color: green;
+    text-decoration: none;
+}
+
+form {
+    margin-top: 50px;
+}
+label, input, textarea {
+    display: inline-block;
+    width: 300px;
+}
+
+label {
+    font-family: "Open Sans";
+    text-align: right;
+    width: 100px;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+.remove {
+    color: red;
+    font-size: 23px;
+}
+
+.englobe {
+    width: 600px;
+}
+.englobe div {
+    display: inline-block;
+
+}
+.englobe a {
+    box-sizing: border-box;
+    padding-top: 115px;;
+    margin: 20px;
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    font-family: 'Open Sans';
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    transition: 1s;
+    font-size: 3rem;
+}
+
+.englobe a:hover {
+    background-color: #262626;
+    color: white;
+}
+
+.fiche_text .align-right {
+    text-align: right;
+}
+
+.orange {
+    color:#F39C12;
+}
+
+.red {
+    color: #C0392B;
+}
+
+
+.see {
+    width: 95%;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #262626;
+    text-align: left;
+}
+
+.see h1{
+    margin-top: 0;
+    color: white;
+}
+
+.see .image {
+    margin-top: 2rem;
+    width: 20%;
+}
+
+.see img {
+    max-width: 100%;
+}
