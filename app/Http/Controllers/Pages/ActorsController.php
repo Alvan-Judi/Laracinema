@@ -1,10 +1,6 @@
 <?php
 
-// Contributed by Julien
-
-
-
-
+// Contributeds by Julien
 
 
 namespace App\Http\Controllers\Pages;
