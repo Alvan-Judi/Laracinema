@@ -76,6 +76,7 @@ p {
     vertical-align: top;
     color: #ECF0F1;
     box-shadow: #262626 1px 1px 5px;
+    border-radius: 4px;
 }
 
 .fiche .image {
@@ -90,6 +91,7 @@ p {
 
 .fiche img {
     border: 3px solid black;
+    border-radius: 4px;
     max-width: 100%;
 }
 
@@ -100,7 +102,7 @@ p {
 }
 
 .fiche_text p {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
     text-align: left;
 }
 
