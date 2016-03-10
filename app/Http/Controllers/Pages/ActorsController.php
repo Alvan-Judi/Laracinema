@@ -1,7 +1,7 @@
 <?php
 
 // Contributeds by Julien
-
+// Ma super amélioration
 
 namespace App\Http\Controllers\Pages;
 
