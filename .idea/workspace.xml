@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8e2d12f9-137e-48f0-97c8-734156e274a8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/see.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/see.blade.php" />
-    </list>
+    <list default="true" id="8e2d12f9-137e-48f0-97c8-734156e274a8" name="Default" comment="" />
     <ignored path="laracinema.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -77,7 +75,7 @@
       <file leaf-file-name="see.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/see.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23631509">
+            <state vertical-scroll-proportion="0.23854448">
               <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
               <folding />
             </state>
@@ -879,7 +877,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/see.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23631509">
+        <state vertical-scroll-proportion="0.23854448">
           <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
           <folding />
         </state>
