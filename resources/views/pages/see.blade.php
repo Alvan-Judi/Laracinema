@@ -14,11 +14,11 @@
 
 
 
-            
+
 
             @if(!empty($result))
                 <div class="see">
-                    <div>TEST PUSH</div>
+                    <div>BLAL BLA </div>
 
                     <h1> {{$result->title}} </h1>
                     <div class="image">
