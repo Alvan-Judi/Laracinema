@@ -23,6 +23,7 @@ class HomeController extends Controller
         $movies = new Movies();
         $nbMovies = $movies->moviesNb();
         $nbMoviesVisible = $movies->moviesNbVisible();
+        $avgNotePress = $movies->avgNotePress();
 
         //ACTORS
         $actors = new Actor();
@@ -31,6 +32,7 @@ class HomeController extends Controller
         //DIRECTORS
         $directors = new Director();
         $nbDirectors = $directors->directorsNb();
+        $allDirectors = $directors->allResults();
 
         //CATEGORIES
         $categories = new Categories();
@@ -41,7 +43,9 @@ class HomeController extends Controller
             'nbActors' => $nbActors,
             'nbDirectors' => $nbDirectors,
             'nbCategories' => $nbCategories,
-            'nbMoviesVisible' => $nbMoviesVisible
+            'nbMoviesVisible' => $nbMoviesVisible,
+            'avgNotePress' => $avgNotePress,
+            'allDirectors' => $allDirectors
         ]);
     }
 

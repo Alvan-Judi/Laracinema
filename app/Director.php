@@ -24,4 +24,10 @@ class Director extends Model
         return $directorsNb;
     }
 
+    public function allResults(){
+        $allResults = DB::table('directors')
+            ->get();
+
+        return $allResults;
+    }
 }

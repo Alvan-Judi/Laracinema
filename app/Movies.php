@@ -31,6 +31,15 @@ class Movies extends Model
         return $nbMoviesVisible;
     }
 
+    public function avgNotePress(){
+
+        $avgNotePress = DB::table('movies')
+            ->avg('note_presse');
+
+        return number_format($avgNotePress, 2);
+
+    }
+
 
 
 }
