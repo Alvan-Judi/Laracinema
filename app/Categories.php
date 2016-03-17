@@ -9,8 +9,17 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Categories extends Model
 {
     protected $table = 'categories';
+
+    public function categoriesNb(){
+
+        $categoriesNb = DB::table('categories')
+            ->count();
+
+        return $categoriesNb;
+    }
 }

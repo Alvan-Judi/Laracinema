@@ -5,35 +5,59 @@
         <?php $url = $_SERVER['REQUEST_URI'] ; ?>
 
         @if($url == '/movies/lister' || preg_match('#^\/movies\/lister\?page=[0-9]+#', $url))
-
-
-            <p class="paginate">
+            <section id="content" class="table-layout">
+        <div id="content-fiche">
+            <p class="paginate text-center">
               <?= $paginate->apply($prepare['current'], $prepare['nbPages'])?>
             </p>
 
+            <table class="table admin-form theme-warning tc-checkbox-1 fs13">
+                <thead>
+                <tr class="bg-light">
+                    <th class="text-center">Id</th>
+                    <th class="">Title</th>
+                    <th class="">Jacket</th>
+                    <th class="">Synopsis</th>
+                    <th class="">Distrib</th>
+                    <th class="">Note</th>
+                    <th class="text-right">Action</th>
+
+                </tr>
+                </thead>
+                <tbody>
+
             @foreach($prepare['results'] as $result)
-                <div class="fiche">
-                    <div class="image">
-                        <img src="{{$result->image}}" />
-                    </div>
-                    <div class="fiche_text">
-                        <h1> {{$result->title}} </h1>
 
 
-                        <p> {!! substr($result->synopsis, 0, 180) !!} [...] </p>
-                        <p><a href="{{route('see_movies', ["id" => $result->id])}}" class="seemore">See more ...</a></p>
-                        <p class="align-right">
-                            <a href="{{route('edit_movies_id',["id" => $result->id])}}" class="orange">Editer</a>
-                            <a href="{{route('remove_movies',["id" => $result->id])}}" class="red">Supprimer</a>
-                        </p>
-                    </div>
-                </div>
+                    <tr>
+                        <td class="text-center">{{$result->id}}</td>
+                        <td class=""><a href="{{route('see_movies',['id' => $result->id])}}">{{$result->title}}</a></td>
+                        <td class="w100">
+                            <img class="img-responsive mw40 ib mr10" title="img" src="{{$result->image}}">
+                        </td>
+                        <td class="">{{ substr($result->synopsis, 0, 150)}}</td>
+                        <td class="">{{$result->distributeur}}</td>
+                        <td class="">{{$result->note_presse}}</td>
+                        <td class="text-right">
+                            <div class="btn-group text-right">
+                                <a class="btn btn-warning br2 btn-xs fs12 " href="{{route('edit_movies',['id' => $result->id])}}">Edit</a>
+                                <a class="btn btn-danger br2 btn-xs fs12 " href="{{route('remove_movies',['id' => $result->id])}}">Delete</a>
+
+                            </div>
+                        </td>
+                    </tr>
+
             @endforeach
 
-            <p class="paginate">
+                </tbody>
+            </table>
+
+
+            <p class="paginate text-center">
                 <?= $paginate->apply($prepare['current'], $prepare['nbPages']);?>
             </p>
-
+        </div>
+            </section>
         @elseif($url == '/actors/lister')
             LIST ACTORS
 

@@ -46,7 +46,7 @@ class MoviesController extends PageController {
     {
         $movie = new Movies();
 
-        $paginate = new Paginate($movie, 4);
+        $paginate = new Paginate($movie, 10);
 
         $prepare = $paginate->prepare();
         /*
@@ -56,11 +56,27 @@ class MoviesController extends PageController {
 
     }
 
+    public function lister2()
+    {
+        $movie = new Movies();
+
+        $paginate = new Paginate($movie, 4);
+
+        $prepare = $paginate->prepare();
+        /*
+         * Retourne une vue
+         */
+        return view('pages/lister2',['paginate' => $paginate, 'prepare' => $prepare]);
+
+    }
+
+
+
     /**
      * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function create(Request $request){
+    public function create(){
         $categories = Categories::all();
 
         return view('pages/create',

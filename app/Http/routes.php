@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('static/welcome');
-});
 
 /**
  * Page contact
@@ -63,6 +60,10 @@ Route::get('/movies',[
  */
 Route::group(['middleware' => ['web']], function () {
 
+    Route::get('/', [
+        'as' => 'homepage',
+        'uses' => 'HomeController@homepage'
+    ]);
     /**
      * MOVIES
      */
@@ -74,14 +75,19 @@ Route::group(['middleware' => ['web']], function () {
             'uses' => 'Pages\MoviesController@lister'
         ]);
 
+        Route::get('/lister2', [
+            'as' => 'list_movies2',
+            'uses' => 'Pages\MoviesController@lister2'
+        ]);
+
         // Create film review
         Route::get('/create', [
-            //Retourne la vue create
+            'as' => 'create_movies',
             'uses' => 'Pages\MoviesController@create'
         ]);
 
         Route::post('/store', [
-            'as' => 'store',
+            'as' => 'store_movies',
             'uses' => 'Pages\MoviesController@store'
         ]);
 

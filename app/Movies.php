@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class movies
@@ -12,5 +13,24 @@ use Illuminate\Database\Eloquent\Model;
 class Movies extends Model
 {
     protected $table = 'movies';
+
+    public function moviesNb(){
+
+        $moviesNb = DB::table('movies')
+            ->count();
+
+        return $moviesNb;
+    }
+
+    public function moviesNbVisible(){
+
+        $nbMoviesVisible = DB::table('movies')
+            ->where('visible', 1)
+            ->count();
+
+        return $nbMoviesVisible;
+    }
+
+
 
 }
