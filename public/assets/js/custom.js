@@ -55,5 +55,82 @@
         }
     });
 
+
+
+    //MESSAGE AJAX
+
+
+    var chat = $('#chat');
+
+    chat.on('submit',function(){
+
+        var dataSubmit = chat.attr('action');
+        var ajax = chat.attr('data-ajax');
+        var messageArea = $('#messages_area');
+        $.ajax({
+            method: 'POST',
+            url : dataSubmit,
+            data: $('#chat').serialize(),
+            success : function(){
+                $.ajax({
+                    method: 'GET',
+                    url: ajax,
+                    success: function(data){
+                        var pseudo = data.lastMessage.pseudo;
+                        var message = data.lastMessage.message;
+
+                        var html = '<p class=""><span class="text-danger">'+ pseudo+' </span>: '+message+'</p>';
+
+                        messageArea.append(html);
+
+
+                            var height = messageArea[0].scrollHeight;
+                            messageArea.animate({
+
+                                scrollTop: height
+
+                            }, '500');
+
+
+                        $('#message').val('');
+
+
+                    }
+                });
+            }//end success
+
+        });//end first ajax
+
+        return false;
+    });//end chat on submit
+
+
+    var favorite = $('.favorite');
+
+    favorite.click(function(){
+
+        var dataLink = $(this).attr('href');
+        var current = $(this);
+        var recentActivityNb = $('#recentActivityNb');
+        var recentVal = recentActivityNb.text();
+
+        $.ajax({
+            url: dataLink,
+            success: function(){
+                if(current.hasClass('text-danger')){
+                    current.removeClass('text-danger').addClass('text-muted');
+                    recentActivityNb.text(recentVal - 1);
+                }
+                else{
+                    current.removeClass('text-muted').addClass('text-danger');
+                    recentActivityNb.text(parseInt(recentVal) + 1);
+                }
+            }
+        });
+
+        return false
+    });
+
+
 })(jQuery);
 

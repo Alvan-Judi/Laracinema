@@ -1,3 +1,17 @@
 #preview h1, #preview img, #preview #syn-preview, #preview #error ul, .nav.sub-nav{
     display: none;
 }
+
+.inactiveComment {
+    display: none;
+}
+
+#messages_area {
+    background-color: #FAFAFA;
+    padding: 20px;
+    border: 1px solid #DDDDDD;
+    width: 74%;
+    height: 400px;
+    overflow-y: scroll ;
+}
+

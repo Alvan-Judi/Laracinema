@@ -42,17 +42,20 @@ class MoviesController extends PageController {
      * avec une pagination
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function lister()
+    public function lister(Request $request)
     {
         $movie = new Movies();
 
         $paginate = new Paginate($movie, 10);
 
         $prepare = $paginate->prepare();
+
+       // dd(session('movies_id'));
+
         /*
          * Retourne une vue
          */
-        return view('pages/lister',['paginate' => $paginate, 'prepare' => $prepare]);
+        return view('pages/lister',['paginate' => $paginate, 'prepare' => $prepare, 'request' => $request]);
 
     }
 
@@ -180,7 +183,31 @@ class MoviesController extends PageController {
         $request->session()->flash('alert-success', 'The movie "'.$title.'" has been deleted !');
         return Redirect::to(route('list_movies'));
     }
+
+    public function cart(Request $request, $id){
+        $movie = Movies::find($id);
+
+        //1. Enregistrer en session l'id
+
+        //On récupère la session 'movies_id' sinon j'initialise un tableau
+        $tab = $request->session()->get('movies_id', []);
+
+
+            if (!in_array($movie->title, $tab)) {
+                //On rajoute l'id au tableau
+                $tab[$id] = $movie->title;
+                //On enregistre le tableau
+            }
+            else{
+                unset($tab[$id]);
+            }
+        $request->session()->put('movies_id', $tab);
+
+        //2.Rediriger vers la liste des films
+        return Redirect::to(route('list_movies'));
+    }
 }
+
 
 
 

@@ -64,10 +64,33 @@ Route::group(['middleware' => ['web']], function () {
         'as' => 'homepage',
         'uses' => 'HomeController@homepage'
     ]);
+
+    Route::get('/chat', [
+        'as' => 'chat',
+        'uses' => 'ChatController@chat'
+    ]);
+
+    Route::post('/chat/store', [
+        'as' => 'chat_store',
+        'uses' => 'ChatController@store'
+    ]);
+
+    Route::get('/chat/ajax', [
+        'as' => 'chat_ajax',
+        'uses' => 'ChatController@chatAjax'
+    ]);
+
+
+
     /**
      * MOVIES
      */
     Route::group(['prefix' => 'movies'], function () {
+
+        Route::get('cart/{id}',[
+            'as' => 'movies_cart',
+            'uses' => 'Pages\MoviesController@cart'
+        ]);
 
         //List film review
         Route::get('/lister', [
